@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação Técnica - Sistema de Análise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0099ff 100%),
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-blend-mode: overlay;
+            background-size: cover;
+            color: white;
+            padding: 6rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #f8f9fa);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #e7f1ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-stack {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tech-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.1);
+            background: #e7f1ff;
+        }
+        
+        .timeline-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .bible-quote {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bible-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 150px;
+            color: #e7f1ff;
+            font-family: serif;
+            z-index: 0;
+        }
+        
+        /* Imagens reais para as seções */
+        .design-system-img {
+            background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5');
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .user-flow-img {
+            background-image: url('https://images.unsplash.com/photo-1512758017271-d7b84c2113f1');
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .responsive-img {
+            background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6');
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Badges modernos */
+        .badge-custom {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            margin: 0.2rem;
+        }
+        
+        .badge-python { background: #306998; color: white; }
+        .badge-react { background: #61dafb; color: black; }
+        .badge-ml { background: #ff6b6b; color: white; }
+    </style>
+</head>
+<body>
+    <!-- Navegação Flutuante -->
+    <div class="floating-nav d-none d-lg-block">
+        <a href="#inicio" class="nav-link"><i class="fas fa-home"></i></a>
+        <a href="#instalacao" class="nav-link"><i class="fas fa-tools"></i></a>
+        <a href="#timeline" class="nav-link"><i class="fas fa-clock"></i></a>
+        <a href="#inspiracao" class="nav-link"><i class="fas fa-lightbulb"></i></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold">Documentação Técnica</h1>
+                    <p class="lead">Sistema de Análise de Colaboradores</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="Hero Image" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-book-open me-2"></i>
+                Documentação Técnica
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <!-- Introdução -->
+        <section class="mb-5">
+            <h2 class="mb-4">📚 Guia de Instalação e Desenvolvimento</h2>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5>Requisitos do Sistema</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Python 3.8+</li>
+                        <li class="list-group-item">pip (gerenciador de pacotes)</li>
+                        <li class="list-group-item">Git</li>
+                        <li class="list-group-item">4GB RAM mínimo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instalação -->
+        <section class="mb-5">
+            <h3>🛠️ Processo de Instalação</h3>
+            <div class="code-block">
+                <pre><code class="language-bash">
+# Criar ambiente virtual
+python -m venv oknew
+
+# Ativar ambiente (Windows)
+oknew\Scripts\activate
+
+# Instalar dependências principais
+pip install pandas numpy scikit-learn flask
+
+# Instalar dependências de visualização
+pip install plotly chart.js
+
+# Instalar dependências de Excel
+pip install openpyxl xlrd
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- Timeline de Desenvolvimento -->
+        <section class="mb-5">
+            <h3>⏱️ Timeline de Desenvolvimento</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h5>Semana 1: Análise e Estruturação</h5>
+                    <p>40 horas de trabalho</p>
+                    <ul>
+                        <li>Análise de requisitos</li>
+                        <li>Estruturação do projeto</li>
+                        <li>Setup inicial do ambiente</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h5>Semana 2: Desenvolvimento Core</h5>
+                    <p>45 horas de trabalho</p>
+                    <ul>
+                        <li>Implementação da análise de dados</li>
+                        <li>Tratamento de erros</li>
+                        <li>Validação de dados</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h5>Semana 3: Machine Learning</h5>
+                    <p>50 horas de trabalho</p>
+                    <ul>
+                        <li>Implementação do RandomForest</li>
+                        <li>Análise de clusters</li>
+                        <li>Testes de modelos</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h5>Semana 4: Frontend e Otimizações</h5>
+                    <p>45 horas de trabalho</p>
+                    <ul>
+                        <li>Desenvolvimento do dashboard</li>
+                        <li>Otimização de performance</li>
+                        <li>Testes finais</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desafios e Soluções -->
+        <section class="mb-5">
+            <h3>🎯 Desafios e Soluções</h3>
+            <div class="accordion" id="challengesAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#challenge1">
+                            Tratamento de Datas
+                        </button>
+                    </h2>
+                    <div id="challenge1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <p><strong>Desafio:</strong> Datas inválidas no Excel</p>
+                            <p><strong>Solução:</strong> Implementação de converter_data_excel() com validação robusta</p>
+                            <p><strong>Tempo:</strong> 15 horas</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mais desafios... -->
+            </div>
+        </section>
+
+        <!-- Técnicas Aplicáveis -->
+        <section class="mb-5">
+            <h3>🔍 Técnicas Aplicáveis em Outros Projetos</h3>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Análise de Dados</h5>
+                            <ul class="list-unstyled">
+                                <li>✓ Normalização de dados</li>
+                                <li>✓ Tratamento de missing values</li>
+                                <li>✓ Detecção de outliers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning</h5>
+                            <ul class="list-unstyled">
+                                <li>✓ Feature engineering</li>
+                                <li>✓ Cross-validation</li>
+                                <li>✓ Hyperparameter tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Visualização</h5>
+                            <ul class="list-unstyled">
+                                <li>✓ Dashboards responsivos</li>
+                                <li>✓ Gráficos interativos</li>
+                                <li>✓ Relatórios automatizados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Tech Stack atualizada -->
+        <section class="container mb-5">
+            <h3 class="mb-4"><i class="fas fa-layer-group"></i> Stack Tecnológico</h3>
+            <div class="tech-stack">
+                <div class="row text-center">
+                    <div class="col">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+                                 alt="Python" width="40">
+                        </div>
+                        <p class="mt-2">Python</p>
+                    </div>
+                    <!-- Adicione mais ícones de tecnologia... -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards de UI/UX atualizados -->
+        <section class="container mb-5">
+            <h3 class="mb-4"><i class="fas fa-paint-brush"></i> UI/UX Design</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="design-system-img"></div>
+                        <div class="card-body">
+                            <h5>Design System</h5>
+                            <p>Sistema de design consistente e escalável</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="user-flow-img"></div>
+                        <div class="card-body">
+                            <h5>User Flow</h5>
+                            <p>Fluxos de navegação otimizados</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="responsive-img"></div>
+                        <div class="card-body">
+                            <h5>Responsividade</h5>
+                            <p>Design adaptativo para todos dispositivos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Inspiração -->
+        <section class="container mb-5" id="inspiracao">
+            <h3><i class="fas fa-lightbulb"></i> Inspirações</h3>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a href="https://dribbble.com" target="_blank" class="text-decoration-none">
+                        <div class="card inspiration-card">
+                            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Dribbble">
+                            <div class="card-body">
+                                <h6>Dribbble</h6>
+                                <p class="text-muted">Inspiração de design</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="https://behance.net" target="_blank" class="text-decoration-none">
+                        <div class="card inspiration-card">
+                            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Behance">
+                            <div class="card-body">
+                                <h6>Behance</h6>
+                                <p class="text-muted">Cases de UX</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Adicione mais cards de inspiração... -->
+            </div>
+        </section>
+
+        <!-- Mensagem Bíblica -->
+        <section class="container mb-5">
+            <div class="bible-quote">
+                <i class="fas fa-book-bible mb-3" style="font-size: 2rem;"></i>
+                <blockquote class="blockquote">
+                    <p class="mb-0">"Em tudo dai graças, porque esta é a vontade de Deus em Cristo Jesus para convosco."</p>
+                    <footer class="blockquote-footer mt-2">1 Tessalonicenses 5:18</footer>
+                </blockquote>
+                <p class="mt-4">
+                    Agradeço a Deus pela oportunidade de desenvolver este projeto e compartilhar conhecimento.
+                    Que este trabalho possa inspirar e ajudar outros desenvolvedores em sua jornada.
+                </p>
+                <div class="mt-4">
+                    <small class="text-muted">
+                        Desenvolvido com ❤️ e fé por Igor J. Soares (@Manfullwell)
+                    </small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Métricas -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center p-4">
+                        <h2 class="display-4 text-primary">180h</h2>
+                        <p>Horas de Desenvolvimento</p>
+                    </div>
+                </div>
+                <!-- Outras métricas... -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
