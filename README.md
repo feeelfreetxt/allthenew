@@ -1,117 +1,159 @@
 # Sistema de Análise de Colaboradores
 
-Sistema completo para análise de desempenho e geração de relatórios de colaboradores.
+<p align="center">
+  <img src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/python-3.8+-blue.svg" />
+  <img src="https://img.shields.io/badge/machine%20learning-enabled-green.svg" />
+  <a href="https://github.com/Manfullwell/data-analytics-saas/blob/main/LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-## Estrutura do Projeto
+> Sistema avançado de análise de desempenho e geração de relatórios para colaboradores usando Machine Learning e Analytics.
 
-- `pipeline_dashboard.py`: Dashboard principal que integra todas as análises
-- `analise_paralela.py`: Análise paralela de múltiplos colaboradores
-- `analise_detalhada.py`: Análise detalhada individual de colaboradores
-- `validacao_metricas.py`: Validação e cálculo de métricas de qualidade
-- `debug_excel.py`: Funções auxiliares para manipulação de arquivos Excel
+## 👨‍💻 Autor
 
-## Funcionalidades
+**Igor J. Soares (@Manfullwell)**
 
-- Análise de métricas de qualidade
-- Geração de relatórios HTML responsivos
-- Dashboard interativo com gráficos
-- Análise paralela de múltiplos arquivos
-- Validação de dados e métricas
+* GitHub: [@Manfullwell](https://github.com/Manfullwell)
 
-## Como Usar
+## 🚀 Funcionalidades
 
-1. Configure o ambiente:
+### Analytics Avançado
+- Análise detalhada de performance individual
+- Processamento paralelo de múltiplos colaboradores
+- Métricas personalizadas de qualidade
+- Dashboard interativo em tempo real
 
-## Tecnologias Utilizadas
+### Machine Learning
+- Previsão de performance usando RandomForest
+- Detecção de padrões de eficiência
+- Análise preditiva de resultados
+- Clustering de perfis similares
+
+### Visualização de Dados
+- Dashboard responsivo com Bootstrap 5
+- Gráficos interativos com Chart.js
+- Relatórios HTML customizados
+- Exportação de dados em múltiplos formatos
+
+## 📊 Pipeline de Dados
+
+1. **Coleta e Validação**
+   - Leitura automática de planilhas Excel
+   - Validação de estrutura de dados
+   - Normalização de campos
+
+2. **Processamento**
+   - Análise paralela de colaboradores
+   - Cálculo de métricas de eficiência
+   - Tratamento de datas e status
+
+3. **Machine Learning**
+   - Treinamento de modelos preditivos
+   - Análise de clusters
+   - Previsão de performance
+
+4. **Visualização**
+   - Dashboard interativo
+   - Gráficos de performance
+   - Relatórios automatizados
+
+## 🛠️ Tecnologias
 
 - Backend: Python/Flask
 - Frontend: HTML5, CSS3, JavaScript
-- Visualização de Dados: Plotly
-- Análise de Dados: Pandas, NumPy
-- UI Framework: Bootstrap 5
-- Processamento de Excel: OpenPyXL
+- Visualização: Chart.js, Plotly
+- Analytics: Pandas, NumPy
+- ML: Scikit-learn
+- UI: Bootstrap 5
+- Excel: OpenPyXL
 
-## Instalação
+## 📦 Instalação
 
-1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/data-analytics-saas.git
+# Clonar repositório
+git clone https://github.com/Manfullwell/data-analytics-saas.git
 cd data-analytics-saas
-```
 
-2. Crie um ambiente virtual e ative-o:
-```bash
-python -m venv venv
-.\venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-```
+# Criar ambiente virtual
+python -m venv oknew
 
-3. Instale as dependências:
-```bash
+# Ativar ambiente
+source oknew/bin/activate  # Linux/Mac
+oknew\Scripts\activate     # Windows
+
+# Instalar dependências
 pip install -r requirements.txt
 ```
 
-## Configuração
+## 🚀 Uso
 
-1. Crie um arquivo `.env` na raiz do projeto:
-```env
-FLASK_APP=app.py
-FLASK_ENV=development
-SECRET_KEY=sua-chave-secreta-aqui
-```
-
-2. Configure os arquivos de dados:
-- Coloque seus arquivos Excel na pasta raiz do projeto
-- Verifique se os nomes dos arquivos correspondem aos esperados no código
-
-## Uso
-
-1. Inicie o servidor de desenvolvimento:
 ```bash
-flask run
+# Executar análise de resultados
+python app/analise_resultados.py
+
+# Iniciar dashboard
+python app/dashboard.py
 ```
 
-2. Acesse a aplicação em seu navegador:
-```
-http://localhost:5000
-```
-
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 data-analytics-saas/
-├── app.py                 # Aplicação Flask principal
-├── auditoria_dados.py     # Módulo de auditoria de dados
-├── analise_360.py         # Módulo de análise 360
-├── static/
-│   ├── css/
-│   │   └── style.css     # Estilos personalizados
-│   └── js/
-│       └── main.js       # JavaScript principal
-├── templates/
-│   └── index.html        # Template principal
-├── requirements.txt       # Dependências do projeto
-└── README.md             # Este arquivo
+├── app/
+│   ├── templates/
+│   │   └── dashboard.html
+│   ├── analise_resultados.py
+│   ├── analise_eficiencia.py
+│   └── dashboard.py
+├── data/
+│   └── planilhas/
+├── logs/
+├── models/
+├── reports/
+└── requirements.txt
 ```
 
-## API Endpoints
+## 🔄 Updates Recentes
 
-- `GET /`: Página principal do dashboard
-- `POST /api/data`: Obtém dados filtrados por seção
-- `GET /api/update_title/<section>`: Atualiza o título baseado na seção
+### v2.0.0
+- Implementação de machine learning para previsão
+- Dashboard interativo com Bootstrap 5
+- Análise avançada de eficiência
+- Sistema de ranking automático
+- Tratamento robusto de datas
+- Detecção de padrões de performance
 
-## Contribuindo
+### v1.5.0
+- Análise paralela de colaboradores
+- Métricas personalizadas
+- Exportação de relatórios
+- Interface responsiva
 
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Crie um Pull Request
+### v1.0.0
+- Análise básica de performance
+- Geração de relatórios
+- Dashboard simples
 
-## Licença
+## 📈 Roadmap
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+- [ ] API REST para integração
+- [ ] Sistema de autenticação
+- [ ] Exportação para múltiplos formatos
+- [ ] Análise preditiva avançada
+- [ ] Integração com BI
+- [ ] Mobile app
 
-## Suporte
+## 🤝 Contribuindo
 
-Para suporte, envie um email para suporte@exemplo.com ou abra uma issue no GitHub.
+Contribuições, issues e feature requests são bem-vindos!
+Sinta-se à vontade para verificar a [página de issues](https://github.com/Manfullwell/data-analytics-saas/issues).
+
+## 📝 Licença
+
+Copyright © 2024 [Igor J. Soares (@Manfullwell)](https://github.com/Manfullwell).
+Este projeto está sob licença [MIT](https://github.com/Manfullwell/data-analytics-saas/blob/main/LICENSE).
+
+---
+_Desenvolvido com ❤️ por Igor J. Soares (@Manfullwell)_
