@@ -1,0 +1,3 @@
+2025-03-05 03:39:52,519 - ERROR - Erro ao analisar colaborador MONYZA: 'SITUAÇÃO'
+2025-03-05 03:39:53,194 - ERROR - Erro ao analisar colaborador JULIANA: '>=' not supported between instances of 'datetime.datetime' and 'float'
+2025-03-05 03:39:55,753 - ERROR - Erro ao analisar colaborador KATIA: '>=' not supported between instances of 'datetime.datetime' and 'float'

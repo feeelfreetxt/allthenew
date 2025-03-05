@@ -1,0 +1,33 @@
+2025-03-05 00:04:20,548 - INFO - Arquivo válido: F:\okok\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:04:26,023 - ERROR - Erro ao processar F:\okok\(JULIO) LISTAS INDIVIDUAIS.xlsx: 'valores_invalidos'
+2025-03-05 00:04:26,876 - INFO - Arquivo válido: F:\okok\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:13,578 - INFO - Caminho base: F:\okok\data
+2025-03-05 00:24:13,578 - INFO - Arquivo Julio: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:13,578 - INFO - Arquivo Leandro: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:13,578 - INFO - Tentando validar arquivo: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:14,592 - INFO - Arquivo válido: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:23,409 - INFO - Tentando validar arquivo: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:24,095 - INFO - Arquivo válido: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 00:24:34,881 - ERROR - Erro na validação da estrutura: 'int' object has no attribute 'upper'
+2025-03-05 01:15:29,613 - INFO - Caminho base: F:\okok\data
+2025-03-05 01:15:29,614 - INFO - Arquivo Julio: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:15:29,614 - INFO - Arquivo Leandro: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:15:29,615 - INFO - Tentando validar arquivo: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:15:30,229 - INFO - Arquivo válido: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:15:37,611 - INFO - Tentando validar arquivo: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:15:38,181 - INFO - Arquivo válido: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:15:48,766 - ERROR - Erro na validação da estrutura: 'int' object has no attribute 'upper'
+2025-03-05 01:23:23,662 - INFO - Caminho base: F:\okok\data
+2025-03-05 01:23:23,662 - INFO - Arquivo Julio: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:23:23,662 - INFO - Arquivo Leandro: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:23:23,662 - INFO - Tentando validar arquivo: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:23:24,281 - INFO - Arquivo válido: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:23:31,679 - INFO - Tentando validar arquivo: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:23:32,251 - INFO - Arquivo válido: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:31:46,867 - INFO - Caminho base: F:\okok\data
+2025-03-05 01:31:46,867 - INFO - Arquivo Julio: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:31:46,867 - INFO - Arquivo Leandro: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:31:46,867 - INFO - Tentando validar arquivo: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:31:47,508 - INFO - Arquivo válido: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:31:54,900 - INFO - Tentando validar arquivo: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 01:31:55,479 - INFO - Arquivo válido: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx

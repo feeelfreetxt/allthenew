@@ -1,0 +1,40 @@
+2025-03-05 02:48:47,021 - ERROR - Erro ao calcular métricas: 'RESOLUCAO'
+2025-03-05 02:52:48,201 - ERROR - Erro ao calcular métricas: Colunas faltantes: RESOLUCAO, SITUACAO
+2025-03-05 02:52:48,201 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: RESOLUCAO, SITUACAO
+2025-03-05 03:01:08,684 - ERROR - Colunas não encontradas: ['DATA']
+2025-03-05 03:01:08,684 - INFO - Colunas disponíveis: ['UNNAMED: 0', 'RESOLUCAO', 'CONTRATO', 'ESCRITÓRIO', 'ÚLTIMO PAGAMENTO', 'PRAZO', 'ENTRADA', 'PRAZO .1', 'BANCO', 'CÓD', 'VALOR DO CLIENTE', 'CONTATO', 'NEGOCIAÇÃO', 'SITUACAO', 'OBSERVAÇÃO', 'UNNAMED: 15', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18', 'UNNAMED: 19', 'UNNAMED: 20', 'UNNAMED: 21', 'UNNAMED: 22']
+2025-03-05 03:01:08,687 - ERROR - Erro ao calcular métricas: Colunas faltantes: DATA
+2025-03-05 03:01:08,687 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: DATA
+2025-03-05 03:01:11,457 - ERROR - Colunas não encontradas: ['SITUACAO']
+2025-03-05 03:01:11,457 - INFO - Colunas disponíveis: ['DATA', 'RESOLUCAO', 'CONTRATO', 'ESCRITÓRIO', 'ÚLTIMO PAGAMENTO', 'PRAZO', 'ENTRADA', 'PRAZO .1', 'BANCO', 'CÓD', 'VALOR DO CLIENTE', 'CONTATO', 'NEGOCIAÇÃO', 'UNNAMED: 13', 'OBSERVAÇÃO', 'UNNAMED: 15', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18', 'UNNAMED: 19', 'UNNAMED: 20', 'UNNAMED: 21', 'UNNAMED: 22']
+2025-03-05 03:01:11,458 - ERROR - Erro ao calcular métricas: Colunas faltantes: SITUACAO
+2025-03-05 03:01:11,458 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: SITUACAO
+2025-03-05 03:01:14,854 - ERROR - Erro ao calcular métricas: 'int' object has no attribute 'strip'
+2025-03-05 03:01:14,855 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: 'int' object has no attribute 'strip'
+2025-03-05 03:07:40,702 - ERROR - Colunas não encontradas: ['DATA']
+2025-03-05 03:07:40,703 - INFO - Colunas disponíveis: ['UNNAMED: 0', 'RESOLUCAO', 'CONTRATO', 'ESCRITÓRIO', 'ÚLTIMO PAGAMENTO', 'PRAZO', 'ENTRADA', 'PRAZO .1', 'BANCO', 'CÓD', 'VALOR DO CLIENTE', 'CONTATO', 'NEGOCIAÇÃO', 'SITUACAO', 'OBSERVAÇÃO', 'UNNAMED: 15', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18', 'UNNAMED: 19', 'UNNAMED: 20', 'UNNAMED: 21', 'UNNAMED: 22']
+2025-03-05 03:07:40,703 - ERROR - Erro ao calcular métricas: Colunas faltantes: DATA
+2025-03-05 03:07:40,703 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: DATA
+2025-03-05 03:07:43,502 - ERROR - Colunas não encontradas: ['SITUACAO']
+2025-03-05 03:07:43,502 - INFO - Colunas disponíveis: ['DATA', 'RESOLUCAO', 'CONTRATO', 'ESCRITÓRIO', 'ÚLTIMO PAGAMENTO', 'PRAZO', 'ENTRADA', 'PRAZO .1', 'BANCO', 'CÓD', 'VALOR DO CLIENTE', 'CONTATO', 'NEGOCIAÇÃO', 'UNNAMED: 13', 'OBSERVAÇÃO', 'UNNAMED: 15', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18', 'UNNAMED: 19', 'UNNAMED: 20', 'UNNAMED: 21', 'UNNAMED: 22']
+2025-03-05 03:07:43,502 - ERROR - Erro ao calcular métricas: Colunas faltantes: SITUACAO
+2025-03-05 03:07:43,502 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: SITUACAO
+2025-03-05 03:07:46,916 - ERROR - Erro ao calcular métricas: 'int' object has no attribute 'strip'
+2025-03-05 03:07:46,916 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: 'int' object has no attribute 'strip'
+2025-03-05 03:16:29,526 - ERROR - Colunas não encontradas: ['DATA']
+2025-03-05 03:16:29,526 - INFO - Colunas disponíveis: ['UNNAMED: 0', 'RESOLUCAO', 'CONTRATO', 'ESCRITÓRIO', 'ÚLTIMO PAGAMENTO', 'PRAZO', 'ENTRADA', 'PRAZO .1', 'BANCO', 'CÓD', 'VALOR DO CLIENTE', 'CONTATO', 'NEGOCIAÇÃO', 'SITUACAO', 'OBSERVAÇÃO', 'UNNAMED: 15', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18', 'UNNAMED: 19', 'UNNAMED: 20', 'UNNAMED: 21', 'UNNAMED: 22']
+2025-03-05 03:16:29,526 - ERROR - Erro ao calcular métricas: Colunas faltantes: DATA
+2025-03-05 03:16:29,526 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: DATA
+2025-03-05 03:16:29,526 - ERROR - Erro ao calcular métricas avançadas: 'DATA'
+2025-03-05 03:16:32,286 - ERROR - Colunas não encontradas: ['SITUACAO']
+2025-03-05 03:16:32,286 - INFO - Colunas disponíveis: ['DATA', 'RESOLUCAO', 'CONTRATO', 'ESCRITÓRIO', 'ÚLTIMO PAGAMENTO', 'PRAZO', 'ENTRADA', 'PRAZO .1', 'BANCO', 'CÓD', 'VALOR DO CLIENTE', 'CONTATO', 'NEGOCIAÇÃO', 'UNNAMED: 13', 'OBSERVAÇÃO', 'UNNAMED: 15', 'UNNAMED: 16', 'UNNAMED: 17', 'UNNAMED: 18', 'UNNAMED: 19', 'UNNAMED: 20', 'UNNAMED: 21', 'UNNAMED: 22']
+2025-03-05 03:16:32,286 - ERROR - Erro ao calcular métricas: Colunas faltantes: SITUACAO
+2025-03-05 03:16:32,286 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: Colunas faltantes: SITUACAO
+2025-03-05 03:16:32,290 - ERROR - Erro ao calcular métricas avançadas: 'SITUAÇÃO'
+2025-03-05 03:16:34,997 - ERROR - Erro ao calcular métricas avançadas: NaTType does not support strftime
+2025-03-05 03:16:35,663 - ERROR - Erro ao calcular métricas: 'int' object has no attribute 'strip'
+2025-03-05 03:16:35,663 - ERROR - Erro na avaliação de eficiência: Erro ao calcular métricas: 'int' object has no attribute 'strip'
+2025-03-05 03:16:35,663 - ERROR - Erro ao calcular métricas avançadas: 'DATA'
+2025-03-05 03:29:27,415 - ERROR - Erro ao calcular métricas avançadas: 'DATA'
+2025-03-05 03:29:30,154 - ERROR - Erro ao calcular métricas avançadas: 'SITUAÇÃO'
+2025-03-05 03:29:33,504 - ERROR - Erro ao calcular métricas avançadas: 'DATA'

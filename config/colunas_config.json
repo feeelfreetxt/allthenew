@@ -1,0 +1,91 @@
+{
+    "colunas_essenciais": {
+        "DATA": {
+            "alternativas": [
+                "DATA",
+                "DT",
+                "DATA_",
+                "DATA CADASTRO"
+            ],
+            "tipo": "data",
+            "formato_data": "%Y-%m-%d",
+            "estrategias": [
+                "direto",
+                "normalizado",
+                "fuzzy"
+            ]
+        },
+        "RESOLUCAO": {
+            "alternativas": [
+                "RESOLUÇÃO",
+                "RESOLUCAO",
+                "RESOL",
+                "DT_RESOLUCAO"
+            ],
+            "tipo": "data",
+            "formato_data": "%Y-%m-%d",
+            "estrategias": [
+                "direto",
+                "normalizado",
+                "fuzzy"
+            ]
+        },
+        "CONTRATO": {
+            "alternativas": [
+                "CONTRATO",
+                "NUM_CONTRATO",
+                "NÚMERO CONTRATO"
+            ],
+            "tipo": "texto",
+            "estrategias": [
+                "direto",
+                "normalizado"
+            ]
+        },
+        "NEGOCIACAO": {
+            "alternativas": [
+                "NEGOCIAÇÃO",
+                "NEGOCIACAO",
+                "DT_NEGOCIACAO"
+            ],
+            "tipo": "data",
+            "formato_data": "%Y-%m-%d",
+            "estrategias": [
+                "direto",
+                "normalizado",
+                "fuzzy"
+            ]
+        },
+        "SITUACAO": {
+            "alternativas": [
+                "SITUAÇÃO",
+                "SITUACAO",
+                "STATUS"
+            ],
+            "tipo": "texto",
+            "valores_validos": [
+                "PENDENTE",
+                "QUITADO",
+                "APREENDIDO",
+                "PRIORIDADE",
+                "VERIFICADO",
+                "APROVADO",
+                "ANÁLISE"
+            ],
+            "estrategias": [
+                "direto",
+                "normalizado"
+            ]
+        }
+    },
+    "estrategias_leitura": [
+        "pandas",
+        "openpyxl",
+        "xlrd"
+    ],
+    "tratamento_erros": {
+        "datas_invalidas": "corrigir",
+        "valores_vazios": "preencher",
+        "formato_invalido": "converter"
+    }
+}

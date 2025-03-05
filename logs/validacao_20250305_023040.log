@@ -1,0 +1,53 @@
+2025-03-05 02:30:40,582 - ValidadorAvancado - INFO - Processando arquivo: F:\okok\data\(JULIO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 02:30:41,021 - ValidadorAvancado - INFO - Processando aba: ANA GESSICA
+2025-03-05 02:30:41,559 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:41,569 - ValidadorAvancado - INFO - Processando aba: ANA LIDIA
+2025-03-05 02:30:42,105 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:42,110 - ValidadorAvancado - INFO - Processando aba: JULIANE
+2025-03-05 02:30:42,655 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'PRIORIDADE TOTAL' 'OUTROS ACORDOS']
+2025-03-05 02:30:42,655 - ValidadorAvancado - INFO - Processando aba: FELIPE
+2025-03-05 02:30:43,191 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'M.ENCAMINHADA']
+2025-03-05 02:30:43,191 - ValidadorAvancado - INFO - Processando aba: LUARA
+2025-03-05 02:30:43,728 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:43,730 - ValidadorAvancado - INFO - Processando aba: MATHEUS
+2025-03-05 02:30:44,256 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:44,258 - ValidadorAvancado - INFO - Processando aba: NUNO
+2025-03-05 02:30:44,795 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:44,796 - ValidadorAvancado - INFO - Processando aba: ELISANGELA
+2025-03-05 02:30:45,323 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:45,325 - ValidadorAvancado - INFO - Processando aba: THALISSON
+2025-03-05 02:30:45,852 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:45,852 - ValidadorAvancado - INFO - Processando aba: VICTOR ADRIANO
+2025-03-05 02:30:46,375 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO']
+2025-03-05 02:30:46,375 - ValidadorAvancado - INFO - Processando aba: POLIANA
+2025-03-05 02:30:46,909 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:46,914 - ValidadorAvancado - INFO - Processando aba: IGOR
+2025-03-05 02:30:47,443 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:47,446 - ValidadorAvancado - INFO - Processando arquivo: F:\okok\data\(LEANDRO_ADRIANO) LISTAS INDIVIDUAIS.xlsx
+2025-03-05 02:30:48,013 - ValidadorAvancado - INFO - Processando aba: AMANDA SANTANA
+2025-03-05 02:30:48,694 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['OUTROS ACORDOS' 'CANCELADO']
+2025-03-05 02:30:48,694 - ValidadorAvancado - INFO - Processando aba: EDIANE
+2025-03-05 02:30:49,360 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:49,361 - ValidadorAvancado - INFO - Processando aba: BRUNO 
+2025-03-05 02:30:50,017 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:50,018 - ValidadorAvancado - INFO - Processando aba: ALINE SALVADOR
+2025-03-05 02:30:50,713 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:50,713 - ValidadorAvancado - INFO - Processando aba: FABIANA
+2025-03-05 02:30:51,380 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['OUTROS ACORDOS' 'CANCELADO']
+2025-03-05 02:30:51,382 - ValidadorAvancado - INFO - Processando aba: MARIA BRUNA
+2025-03-05 02:30:52,072 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO']
+2025-03-05 02:30:52,075 - ValidadorAvancado - INFO - Processando aba: ITAYNNARA
+2025-03-05 02:30:52,777 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['OUTROS ACORDOS' 'CANCELADO']
+2025-03-05 02:30:52,778 - ValidadorAvancado - INFO - Processando aba: MONYZA
+2025-03-05 02:30:53,443 - ValidadorAvancado - INFO - Processando aba: JULIANA
+2025-03-05 02:30:54,126 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:54,127 - ValidadorAvancado - INFO - Processando aba: IZABEL
+2025-03-05 02:30:54,785 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
+2025-03-05 02:30:54,786 - ValidadorAvancado - INFO - Processando aba: VITORIA
+2025-03-05 02:30:55,375 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO']
+2025-03-05 02:30:55,377 - ValidadorAvancado - INFO - Processando aba: JULIA
+2025-03-05 02:30:56,061 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:56,064 - ValidadorAvancado - INFO - Processando aba: KATIA
+2025-03-05 02:30:56,747 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS' 'PRIORIDADE TOTAL']
+2025-03-05 02:30:56,749 - ValidadorAvancado - INFO - Processando aba: GREICY
+2025-03-05 02:30:57,428 - ValidadorAvancado - WARNING - Valores inválidos encontrados em SITUACAO: ['CANCELADO' 'OUTROS ACORDOS']
