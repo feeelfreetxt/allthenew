@@ -1,176 +1,136 @@
-import pkg_resources
 import subprocess
-from packaging import version
-import sys
-import os
-import importlib
+import pkg_resources
+import logging
+from pathlib import Path
 
-def verificar_dependencias():
-    """Verifica as dependências instaladas contra o requirements.txt"""
-    try:
-        # Ler requirements.txt
-        with open('requirements.txt', 'r') as f:
-            requirements = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+# Configurar logging
+logging.basicConfig(
+    filename='dependencias.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+class DependencyManager:
+    def __init__(self):
+        self.requirements = {
+            'numpy': '1.21.2',  # Versão específica para compatibilidade
+            'pandas': '1.3.3',
+            'plotly': '5.3.1',
+            'streamlit': '1.2.0',
+            'Flask': '2.0.1',
+            'Flask-SQLAlchemy': '2.5.1',
+            'Flask-Migrate': '3.1.0',
+            'python-dotenv': '0.19.0',
+            'openpyxl': '3.0.9',
+            'scikit-learn': '0.24.2'
+        }
         
-        # Obter pacotes instalados
-        installed_packages = {pkg.key: pkg.version for pkg in pkg_resources.working_set}
+    def check_installed_versions(self):
+        """Verifica versões instaladas das dependências"""
+        installed = {}
+        for package in self.requirements:
+            try:
+                version = pkg_resources.get_distribution(package).version
+                installed[package] = version
+                logging.info(f"Versão instalada de {package}: {version}")
+            except pkg_resources.DistributionNotFound:
+                installed[package] = None
+                logging.warning(f"Pacote {package} não encontrado")
+        return installed
+
+    def fix_dependencies(self):
+        """Corrige versões das dependências"""
+        logging.info("Iniciando correção de dependências...")
         
-        print("\n=== Verificação de Dependências ===\n")
-        
-        status = {"instalados": [], "ausentes": [], "versao_incompativel": []}
-        
-        for req in requirements:
-            if '>=' in req:
-                package, version_req = req.split('>=')
-                comparador = '>='
-            elif '==' in req:
-                package, version_req = req.split('==')
-                comparador = '=='
-            else:
-                continue
+        # Primeiro, desinstalar versões conflitantes
+        for package in self.requirements:
+            try:
+                subprocess.run(['pip', 'uninstall', '-y', package], 
+                             capture_output=True, 
+                             text=True)
+                logging.info(f"Desinstalado: {package}")
+            except Exception as e:
+                logging.error(f"Erro ao desinstalar {package}: {str(e)}")
+
+        # Instalar versões corretas
+        for package, version in self.requirements.items():
+            try:
+                cmd = ['pip', 'install', f"{package}=={version}"]
+                result = subprocess.run(cmd, 
+                                     capture_output=True, 
+                                     text=True)
                 
-            package = package.strip()
-            version_req = version_req.strip()
-            
-            if package.lower() in installed_packages:
-                installed_version = installed_packages[package.lower()]
-                
-                if comparador == '>=':
-                    if version.parse(installed_version) >= version.parse(version_req):
-                        status["instalados"].append(f"{package} {installed_version} (✓)")
-                    else:
-                        status["versao_incompativel"].append(
-                            f"{package} {installed_version} (requer >={version_req})"
-                        )
-                else:  # ==
-                    if version.parse(installed_version) == version.parse(version_req):
-                        status["instalados"].append(f"{package} {installed_version} (✓)")
-                    else:
-                        status["versao_incompativel"].append(
-                            f"{package} {installed_version} (requer =={version_req})"
-                        )
-            else:
-                status["ausentes"].append(package)
+                if result.returncode == 0:
+                    logging.info(f"Instalado {package}=={version}")
+                else:
+                    logging.error(f"Erro ao instalar {package}: {result.stderr}")
+                    # Tentar instalar sem versão específica
+                    result = subprocess.run(['pip', 'install', package], 
+                                         capture_output=True, 
+                                         text=True)
+                    if result.returncode == 0:
+                        logging.info(f"Instalado {package} (última versão)")
+            except Exception as e:
+                logging.error(f"Erro ao instalar {package}: {str(e)}")
+
+    def update_imports(self):
+        """Atualiza imports nos arquivos Python"""
+        files_to_update = {
+            'analise_360.py': [
+                'import numpy as np',
+                'import pandas as pd',
+                'import plotly.express as px',
+                'import plotly.graph_objects as go',
+                'import streamlit as st'
+            ],
+            'debug_excel.py': [
+                'import numpy as np',
+                'import pandas as pd'
+            ]
+        }
+
+        for file, imports in files_to_update.items():
+            try:
+                if Path(file).exists():
+                    with open(file, 'r', encoding='utf-8') as f:
+                        content = f.read()
+
+                    # Atualizar imports
+                    new_content = content
+                    for imp in imports:
+                        if imp not in content:
+                            new_content = imp + '\n' + new_content
+
+                    with open(file, 'w', encoding='utf-8') as f:
+                        f.write(new_content)
+                    
+                    logging.info(f"Arquivo {file} atualizado")
+            except Exception as e:
+                logging.error(f"Erro ao atualizar {file}: {str(e)}")
+
+    def run(self):
+        """Executa todo o processo de verificação e correção"""
+        print("Iniciando verificação de dependências...")
         
-        # Exibir resultados
-        print("Pacotes Instalados Corretamente:")
-        for pkg in status["instalados"]:
-            print(f"✓ {pkg}")
+        # Verificar versões atuais
+        current_versions = self.check_installed_versions()
         
-        if status["versao_incompativel"]:
-            print("\nPacotes com Versão Incompatível:")
-            for pkg in status["versao_incompativel"]:
-                print(f"⚠ {pkg}")
-        
-        if status["ausentes"]:
-            print("\nPacotes Ausentes:")
-            for pkg in status["ausentes"]:
-                print(f"✗ {pkg}")
-        
-        return status
+        # Identificar problemas
+        problems = []
+        for package, required_version in self.requirements.items():
+            if package not in current_versions or current_versions[package] != required_version:
+                problems.append(package)
 
-    except FileNotFoundError:
-        print("Erro: Arquivo 'requirements.txt' não encontrado no diretório atual.")
-        print(f"Diretório atual: {os.getcwd()}")
-        return None
-    except Exception as e:
-        print(f"Erro ao verificar dependências: {str(e)}")
-        return None
-
-def criar_requirements_atualizado():
-    """Cria um novo requirements.txt com as versões exatas instaladas"""
-    import pkg_resources
-    
-    # Obter pacotes instalados
-    installed_packages = {
-        pkg.key: pkg.version 
-        for pkg in pkg_resources.working_set
-    }
-    
-    # Template com as dependências necessárias e suas versões
-    requirements = f"""# Dependências principais
-flask=={installed_packages.get('flask', '2.3.3')}
-pandas=={installed_packages.get('pandas', '2.2.3')}
-numpy=={installed_packages.get('numpy', '2.2.2')}
-plotly=={installed_packages.get('plotly', '6.0.0')}
-streamlit=={installed_packages.get('streamlit', '1.42.0')}
-
-# Processamento de dados
-openpyxl=={installed_packages.get('openpyxl', '3.1.5')}
-python-dotenv=={installed_packages.get('python-dotenv', '1.0.0')}
-scikit-learn=={installed_packages.get('scikit-learn', '1.6.1')}
-scipy=={installed_packages.get('scipy', '1.15.2')}
-
-# Visualização
-matplotlib=={installed_packages.get('matplotlib', '3.10.0')}
-seaborn=={installed_packages.get('seaborn', '0.13.2')}
-statsmodels=={installed_packages.get('statsmodels', '0.14.0')}
-
-# Web e Dashboard
-dash=={installed_packages.get('dash', '2.13.0')}
-dash-bootstrap-components=={installed_packages.get('dash-bootstrap-components', '1.5.0')}
-gunicorn=={installed_packages.get('gunicorn', '21.2.0')}
-
-# Banco de dados
-SQLAlchemy=={installed_packages.get('sqlalchemy', '2.0.20')}
-
-# Testes
-pytest=={installed_packages.get('pytest', '8.3.4')}
-"""
-    
-    # Salvar o novo requirements.txt
-    with open('requirements.txt', 'w') as f:
-        f.write(requirements)
-    
-    print("Novo arquivo requirements.txt criado com as versões exatas!")
-    print("\nConteúdo do novo requirements.txt:")
-    print(requirements)
-
-def verificar_dependencia(pacote, versao_minima=None):
-    try:
-        modulo = importlib.import_module(pacote)
-        if versao_minima:
-            versao_atual = modulo.__version__
-            if versao_atual < versao_minima:
-                print(f"⚠️ {pacote} versão {versao_atual} instalada, mas a versão mínima recomendada é {versao_minima}")
-                return False
-        print(f"✅ {pacote} instalado corretamente")
-        return True
-    except ImportError:
-        print(f"❌ {pacote} não está instalado")
-        return False
-
-def instalar_dependencias():
-    dependencias = [
-        "flask",
-        "pandas",
-        "numpy",
-        "openpyxl",  # Para ler arquivos Excel
-        "xlrd",      # Para ler arquivos Excel antigos (.xls)
-    ]
-    
-    print("Verificando dependências...")
-    faltando = []
-    
-    for dep in dependencias:
-        if not verificar_dependencia(dep):
-            faltando.append(dep)
-    
-    if faltando:
-        print("\nAlgumas dependências estão faltando. Deseja instalá-las agora? (s/n)")
-        resposta = input().lower()
-        
-        if resposta == 's':
-            print("\nInstalando dependências...")
-            for dep in faltando:
-                print(f"Instalando {dep}...")
-                subprocess.check_call([sys.executable, "-m", "pip", "install", dep])
-            print("\nTodas as dependências foram instaladas!")
+        if problems:
+            print(f"\nEncontrados problemas com: {', '.join(problems)}")
+            print("Iniciando correção...")
+            self.fix_dependencies()
+            self.update_imports()
         else:
-            print("\nVocê precisará instalar as dependências manualmente para usar o sistema.")
-            print("Use o comando: pip install " + " ".join(faltando))
-    else:
-        print("\nTodas as dependências estão instaladas corretamente!")
+            print("Todas as dependências estão corretas!")
+
+        print("\nVerifique o arquivo dependencias.log para mais detalhes")
 
 if __name__ == "__main__":
-    instalar_dependencias()
+    manager = DependencyManager()
+    manager.run() 
