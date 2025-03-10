@@ -1,0 +1,937 @@
+==================================================
+RELATÓRIO COMPLETO DE ANÁLISE DE CONTRATOS
+Data de Geração: 10/03/2025 03:12
+==================================================
+
+GRUPO: JULIO
+==================================================
+
+ANA GESSICA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              83
+ANÁLISE                  6
+PENDENTE               507
+PRIORIDADE              13
+PRIORIDADE TOTAL         1
+APROVADO                54
+APREENDIDO               4
+CANCELADO               15
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              83
+ANÁLISE                  6
+PENDENTE               507
+PRIORIDADE              13
+PRIORIDADE TOTAL         1
+APROVADO                54
+APREENDIDO               4
+CANCELADO               15
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):       19.4
+
+==================================================
+
+ANA LIDIA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              61
+ANÁLISE                  4
+PENDENTE               494
+PRIORIDADE               9
+PRIORIDADE TOTAL         1
+APROVADO                69
+APREENDIDO               6
+CANCELADO               27
+------------------------------
+TOTAL                  712
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              61
+ANÁLISE                  4
+PENDENTE               494
+PRIORIDADE               9
+PRIORIDADE TOTAL         1
+APROVADO                69
+APREENDIDO               6
+CANCELADO               27
+------------------------------
+TOTAL                  712
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        712.0
+Prod. Horária:       89.00
+Eficiência (%):       18.3
+
+==================================================
+
+JULIANE
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              60
+ANÁLISE                  6
+PENDENTE               573
+PRIORIDADE              12
+PRIORIDADE TOTAL         1
+APROVADO                23
+APREENDIDO               2
+CANCELADO                3
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              60
+ANÁLISE                  6
+PENDENTE               573
+PRIORIDADE              12
+PRIORIDADE TOTAL         1
+APROVADO                23
+APREENDIDO               2
+CANCELADO                3
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):       11.7
+
+==================================================
+
+FELIPE
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              74
+ANÁLISE                  2
+PENDENTE               463
+PRIORIDADE               2
+PRIORIDADE TOTAL         0
+APROVADO               109
+APREENDIDO               3
+CANCELADO               20
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              74
+ANÁLISE                  2
+PENDENTE               463
+PRIORIDADE               2
+PRIORIDADE TOTAL         0
+APROVADO               109
+APREENDIDO               3
+CANCELADO               20
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):       25.8
+
+==================================================
+
+LUARA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              40
+ANÁLISE                  1
+PENDENTE               601
+PRIORIDADE               3
+PRIORIDADE TOTAL         1
+APROVADO                36
+APREENDIDO               2
+CANCELADO                3
+------------------------------
+TOTAL                  714
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              40
+ANÁLISE                  1
+PENDENTE               601
+PRIORIDADE               3
+PRIORIDADE TOTAL         1
+APROVADO                36
+APREENDIDO               2
+CANCELADO                3
+------------------------------
+TOTAL                  714
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        714.0
+Prod. Horária:       89.25
+Eficiência (%):       10.6
+
+==================================================
+
+MATHEUS
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              65
+ANÁLISE                  3
+PENDENTE               526
+PRIORIDADE               3
+PRIORIDADE TOTAL         0
+APROVADO                54
+APREENDIDO               3
+CANCELADO               15
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              65
+ANÁLISE                  3
+PENDENTE               526
+PRIORIDADE               3
+PRIORIDADE TOTAL         0
+APROVADO                54
+APREENDIDO               3
+CANCELADO               15
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):       16.8
+
+==================================================
+
+NUNO
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              59
+ANÁLISE                  4
+PENDENTE               536
+PRIORIDADE               5
+PRIORIDADE TOTAL         1
+APROVADO                46
+APREENDIDO               4
+CANCELADO               22
+------------------------------
+TOTAL                  707
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              59
+ANÁLISE                  4
+PENDENTE               536
+PRIORIDADE               5
+PRIORIDADE TOTAL         1
+APROVADO                46
+APREENDIDO               4
+CANCELADO               22
+------------------------------
+TOTAL                  707
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        707.0
+Prod. Horária:       88.38
+Eficiência (%):       14.9
+
+==================================================
+
+ELISANGELA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              54
+ANÁLISE                  5
+PENDENTE               570
+PRIORIDADE               0
+PRIORIDADE TOTAL         0
+APROVADO                40
+APREENDIDO               7
+CANCELADO               10
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              54
+ANÁLISE                  5
+PENDENTE               570
+PRIORIDADE               0
+PRIORIDADE TOTAL         0
+APROVADO                40
+APREENDIDO               7
+CANCELADO               10
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):       13.3
+
+==================================================
+
+THALISSON
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              59
+ANÁLISE                  6
+PENDENTE               562
+PRIORIDADE               1
+PRIORIDADE TOTAL         0
+APROVADO                39
+APREENDIDO               1
+CANCELADO                2
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              59
+ANÁLISE                  6
+PENDENTE               562
+PRIORIDADE               1
+PRIORIDADE TOTAL         0
+APROVADO                39
+APREENDIDO               1
+CANCELADO                2
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):       13.8
+
+==================================================
+
+VICTOR ADRIANO
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              19
+ANÁLISE                  4
+PENDENTE               635
+PRIORIDADE               9
+PRIORIDADE TOTAL         0
+APROVADO                16
+APREENDIDO               0
+CANCELADO                1
+------------------------------
+TOTAL                  707
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              19
+ANÁLISE                  4
+PENDENTE               635
+PRIORIDADE               9
+PRIORIDADE TOTAL         0
+APROVADO                16
+APREENDIDO               0
+CANCELADO                1
+------------------------------
+TOTAL                  707
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        707.0
+Prod. Horária:       88.38
+Eficiência (%):        5.0
+
+==================================================
+
+POLIANA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              90
+ANÁLISE                  9
+PENDENTE               422
+PRIORIDADE               7
+PRIORIDADE TOTAL         0
+APROVADO               109
+APREENDIDO               4
+CANCELADO               17
+------------------------------
+TOTAL                  709
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              90
+ANÁLISE                  9
+PENDENTE               422
+PRIORIDADE               7
+PRIORIDADE TOTAL         0
+APROVADO               109
+APREENDIDO               4
+CANCELADO               17
+------------------------------
+TOTAL                  709
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        709.0
+Prod. Horária:       88.62
+Eficiência (%):       28.1
+
+==================================================
+
+IGOR
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              25
+ANÁLISE                 11
+PENDENTE               612
+PRIORIDADE              22
+PRIORIDADE TOTAL         2
+APROVADO                15
+APREENDIDO               0
+CANCELADO                6
+------------------------------
+TOTAL                  708
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              25
+ANÁLISE                 11
+PENDENTE               612
+PRIORIDADE              22
+PRIORIDADE TOTAL         2
+APROVADO                15
+APREENDIDO               0
+CANCELADO                6
+------------------------------
+TOTAL                  708
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        708.0
+Prod. Horária:       88.50
+Eficiência (%):        5.6
+
+==================================================
+
+TOTAIS DO GRUPO JULIO
+--------------------------------------------------
+VERIFICADO             689
+ANÁLISE                 61
+PENDENTE              6501
+PRIORIDADE              86
+PRIORIDADE TOTAL         7
+APROVADO               610
+APREENDIDO              36
+CANCELADO              141
+------------------------------
+TOTAL GERAL           8505
+
+GRUPO: LEANDRO
+==================================================
+
+AMANDA SANTANA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              60
+ANÁLISE                  2
+PENDENTE               792
+PRIORIDADE               4
+PRIORIDADE TOTAL         0
+APROVADO                81
+APREENDIDO               2
+CANCELADO               25
+------------------------------
+TOTAL                 1011
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              60
+ANÁLISE                  2
+PENDENTE               792
+PRIORIDADE               4
+PRIORIDADE TOTAL         0
+APROVADO                81
+APREENDIDO               2
+CANCELADO               25
+------------------------------
+TOTAL                 1011
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        1011.0
+Prod. Horária:       126.38
+Eficiência (%):       13.9
+
+==================================================
+
+EDIANE
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO             112
+ANÁLISE                  4
+PENDENTE               458
+PRIORIDADE               3
+PRIORIDADE TOTAL         0
+APROVADO                25
+APREENDIDO               3
+CANCELADO               12
+------------------------------
+TOTAL                  652
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO             112
+ANÁLISE                  4
+PENDENTE               458
+PRIORIDADE               3
+PRIORIDADE TOTAL         0
+APROVADO                25
+APREENDIDO               3
+CANCELADO               12
+------------------------------
+TOTAL                  652
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        652.0
+Prod. Horária:       81.50
+Eficiência (%):       21.0
+
+==================================================
+
+BRUNO 
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              64
+ANÁLISE                  0
+PENDENTE               453
+PRIORIDADE               6
+PRIORIDADE TOTAL         0
+APROVADO                54
+APREENDIDO               5
+CANCELADO               29
+------------------------------
+TOTAL                  653
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              64
+ANÁLISE                  0
+PENDENTE               453
+PRIORIDADE               6
+PRIORIDADE TOTAL         0
+APROVADO                54
+APREENDIDO               5
+CANCELADO               29
+------------------------------
+TOTAL                  653
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        653.0
+Prod. Horária:       81.62
+Eficiência (%):       18.1
+
+==================================================
+
+ALINE SALVADOR
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              54
+ANÁLISE                  1
+PENDENTE               866
+PRIORIDADE               6
+PRIORIDADE TOTAL         1
+APROVADO                40
+APREENDIDO               3
+CANCELADO                5
+------------------------------
+TOTAL                  997
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              54
+ANÁLISE                  1
+PENDENTE               866
+PRIORIDADE               6
+PRIORIDADE TOTAL         1
+APROVADO                40
+APREENDIDO               3
+CANCELADO                5
+------------------------------
+TOTAL                  997
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        997.0
+Prod. Horária:       124.62
+Eficiência (%):        9.4
+
+==================================================
+
+FABIANA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              71
+ANÁLISE                  2
+PENDENTE               460
+PRIORIDADE               7
+PRIORIDADE TOTAL         0
+APROVADO                46
+APREENDIDO               3
+CANCELADO               18
+------------------------------
+TOTAL                  652
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              71
+ANÁLISE                  2
+PENDENTE               460
+PRIORIDADE               7
+PRIORIDADE TOTAL         0
+APROVADO                46
+APREENDIDO               3
+CANCELADO               18
+------------------------------
+TOTAL                  652
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        652.0
+Prod. Horária:       81.50
+Eficiência (%):       17.9
+
+==================================================
+
+MARIA BRUNA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              98
+ANÁLISE                  3
+PENDENTE               798
+PRIORIDADE               0
+PRIORIDADE TOTAL         0
+APROVADO                62
+APREENDIDO               2
+CANCELADO                7
+------------------------------
+TOTAL                  997
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              98
+ANÁLISE                  3
+PENDENTE               798
+PRIORIDADE               0
+PRIORIDADE TOTAL         0
+APROVADO                62
+APREENDIDO               2
+CANCELADO                7
+------------------------------
+TOTAL                  997
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        997.0
+Prod. Horária:       124.62
+Eficiência (%):       16.0
+
+==================================================
+
+ITAYNNARA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              87
+ANÁLISE                  1
+PENDENTE               745
+PRIORIDADE               1
+PRIORIDADE TOTAL         0
+APROVADO                98
+APREENDIDO               4
+CANCELADO               30
+------------------------------
+TOTAL                  997
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              87
+ANÁLISE                  1
+PENDENTE               745
+PRIORIDADE               1
+PRIORIDADE TOTAL         0
+APROVADO                98
+APREENDIDO               4
+CANCELADO               30
+------------------------------
+TOTAL                  997
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        997.0
+Prod. Horária:       124.62
+Eficiência (%):       18.6
+
+==================================================
+
+JULIANA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              57
+ANÁLISE                  0
+PENDENTE               856
+PRIORIDADE               3
+PRIORIDADE TOTAL         0
+APROVADO                22
+APREENDIDO               3
+CANCELADO               14
+------------------------------
+TOTAL                  996
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              57
+ANÁLISE                  0
+PENDENTE               856
+PRIORIDADE               3
+PRIORIDADE TOTAL         0
+APROVADO                22
+APREENDIDO               3
+CANCELADO               14
+------------------------------
+TOTAL                  996
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        996.0
+Prod. Horária:       124.50
+Eficiência (%):        7.9
+
+==================================================
+
+IZABEL
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              33
+ANÁLISE                  1
+PENDENTE               558
+PRIORIDADE               8
+PRIORIDADE TOTAL         0
+APROVADO                18
+APREENDIDO               2
+CANCELADO                7
+------------------------------
+TOTAL                  650
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              33
+ANÁLISE                  1
+PENDENTE               558
+PRIORIDADE               8
+PRIORIDADE TOTAL         0
+APROVADO                18
+APREENDIDO               2
+CANCELADO                7
+------------------------------
+TOTAL                  650
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        650.0
+Prod. Horária:       81.25
+Eficiência (%):        7.8
+
+==================================================
+
+VITORIA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              25
+ANÁLISE                  0
+PENDENTE                29
+PRIORIDADE               4
+PRIORIDADE TOTAL         0
+APROVADO                 9
+APREENDIDO               0
+CANCELADO                8
+------------------------------
+TOTAL                   89
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              25
+ANÁLISE                  0
+PENDENTE                29
+PRIORIDADE               4
+PRIORIDADE TOTAL         0
+APROVADO                 9
+APREENDIDO               0
+CANCELADO                8
+------------------------------
+TOTAL                   89
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:         89.0
+Prod. Horária:       11.12
+Eficiência (%):       38.2
+
+==================================================
+
+JULIA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              72
+ANÁLISE                  1
+PENDENTE               816
+PRIORIDADE               5
+PRIORIDADE TOTAL         1
+APROVADO                61
+APREENDIDO               1
+CANCELADO               23
+------------------------------
+TOTAL                  996
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              72
+ANÁLISE                  1
+PENDENTE               816
+PRIORIDADE               5
+PRIORIDADE TOTAL         1
+APROVADO                61
+APREENDIDO               1
+CANCELADO               23
+------------------------------
+TOTAL                  996
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        996.0
+Prod. Horária:       124.50
+Eficiência (%):       13.4
+
+==================================================
+
+KATIA
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              48
+ANÁLISE                  2
+PENDENTE               850
+PRIORIDADE               8
+PRIORIDADE TOTAL         2
+APROVADO                49
+APREENDIDO               0
+CANCELADO                9
+------------------------------
+TOTAL                  996
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              48
+ANÁLISE                  2
+PENDENTE               850
+PRIORIDADE               8
+PRIORIDADE TOTAL         2
+APROVADO                49
+APREENDIDO               0
+CANCELADO                9
+------------------------------
+TOTAL                  996
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        996.0
+Prod. Horária:       124.50
+Eficiência (%):        9.7
+
+==================================================
+
+GREICY
+--------------------------------------------------
+RELATÓRIO DIÁRIO
+------------------------------
+VERIFICADO              30
+ANÁLISE                  2
+PENDENTE               909
+PRIORIDADE              12
+PRIORIDADE TOTAL         0
+APROVADO                17
+APREENDIDO               0
+CANCELADO               11
+------------------------------
+TOTAL                  996
+
+RELATÓRIO GERAL
+------------------------------
+VERIFICADO              30
+ANÁLISE                  2
+PENDENTE               909
+PRIORIDADE              12
+PRIORIDADE TOTAL         0
+APROVADO                17
+APREENDIDO               0
+CANCELADO               11
+------------------------------
+TOTAL                  996
+
+MÉTRICAS DE PRODUTIVIDADE
+------------------------------
+Prod. Diária:        996.0
+Prod. Horária:       124.50
+Eficiência (%):        4.7
+
+==================================================
+
+TOTAIS DO GRUPO LEANDRO
+--------------------------------------------------
+VERIFICADO             811
+ANÁLISE                 19
+PENDENTE              8590
+PRIORIDADE              67
+PRIORIDADE TOTAL         4
+APROVADO               582
+APREENDIDO              28
+CANCELADO              198
+------------------------------
+TOTAL GERAL          10682
+

@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Análise de Contratos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- ApexCharts -->
+    <link href="https://cdn.jsdelivr.net/npm/apexcharts@3.41.0/dist/apexcharts.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #858796;
+            --success-color: #1cc88a;
+            --info-color: #36b9cc;
+            --warning-color: #f6c23e;
+            --danger-color: #e74a3b;
+        }
+        
+        body {
+            background-color: #f8f9fc;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--primary-color) 10%, #224abe 100%);
+            color: white;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+        }
+        
+        .dropdown-menu {
+            font-size: 0.85rem;
+        }
+        
+        .chart-container {
+            min-height: 300px;
+        }
+        
+        .table th {
+            font-weight: 600;
+            background-color: #f8f9fc;
+        }
+        
+        .progress {
+            height: 1rem;
+            border-radius: 0.35rem;
+        }
+        
+        .colaborador-card {
+            transition: transform 0.2s;
+        }
+        
+        .colaborador-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .filter-section {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.35rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <h5 class="px-3 mb-4">Análise de Contratos</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#colaboradores">
+                                <i class="fas fa-users me-2"></i>
+                                Colaboradores
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#relatorios">
+                                <i class="fas fa-chart-bar me-2"></i>
+                                Relatórios
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <i class="fas fa-calendar me-1"></i>
+                            Esta Semana
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filtros -->
+                <div class="filter-section mb-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Grupo</label>
+                            <select class="form-select" id="grupoFilter">
+                                <option value="">Todos</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Colaborador</label>
+                            <select class="form-select" id="colaboradorFilter">
+                                <option value="">Todos</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="statusFilter">
+                                <option value="">Todos</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Período</label>
+                            <input type="date" class="form-control" id="periodoFilter">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards de Resumo -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-primary h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Total de Contratos</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalContratos">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-success h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Aprovados</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalAprovados">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-check fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-warning h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Pendentes</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalPendentes">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clock fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card border-left-info h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Eficiência</div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="eficienciaTotal">0%</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar bg-info" role="progressbar" id="eficienciaBar"
+                                                        style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-percentage fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="row mb-4">
+                    <div class="col-xl-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="m-0 font-weight-bold text-primary">Evolução de Contratos</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container" id="evolucaoChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="m-0 font-weight-bold text-primary">Distribuição por Status</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container" id="statusChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabela de Colaboradores -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary">Desempenho dos Colaboradores</h6>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary" id="toggleProdutividade">
+                                <i class="fas fa-chart-line me-1"></i>
+                                Métricas de Produtividade
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="colaboradoresTable">
+                                <thead>
+                                    <tr>
+                                        <th>Colaborador</th>
+                                        <th>Grupo</th>
+                                        <th>Total</th>
+                                        <th>Aprovados</th>
+                                        <th>Pendentes</th>
+                                        <th>Eficiência</th>
+                                        <th>Prod./Dia</th>
+                                        <th>Prod./Hora</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Preenchido via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relatório Diário -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary">Relatório Diário</h6>
+                        <div class="d-flex align-items-center">
+                            <select class="form-select form-select-sm me-2" id="grupoRelatorio">
+                                <option value="">Todos os Grupos</option>
+                            </select>
+                            <select class="form-select form-select-sm" id="colaboradorRelatorio">
+                                <option value="">Selecione um colaborador</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped" id="relatorioDiarioTable">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Quantidade</th>
+                                        <th>%</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Preenchido via JavaScript -->
+                                </tbody>
+                                <tfoot>
+                                    <tr class="table-dark">
+                                        <th>TOTAL</th>
+                                        <th id="totalRelatorio">0</th>
+                                        <th>100%</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.41.0/dist/apexcharts.min.js"></script>
+    <script>
+        // Dados de exemplo (serão substituídos pelos dados reais)
+        const dadosExemplo = {
+            grupos: ['JULIO', 'LEANDRO'],
+            colaboradores: [
+                // Grupo JULIO
+                {
+                    nome: 'ANA GESSICA',
+                    grupo: 'JULIO',
+                    total: 658,
+                    aprovados: 68,
+                    pendentes: 532,
+                    eficiencia: 100.0,
+                    prod_diaria: 658.0,
+                    prod_horaria: 82.25
+                },
+                {
+                    nome: 'ANA LIDIA',
+                    grupo: 'JULIO',
+                    total: 650,
+                    aprovados: 93,
+                    pendentes: 493,
+                    eficiencia: 99.7,
+                    prod_diaria: 650.0,
+                    prod_horaria: 81.25
+                },
+                {
+                    nome: 'FELIPE',
+                    grupo: 'JULIO',
+                    total: 655,
+                    aprovados: 143,
+                    pendentes: 423,
+                    eficiencia: 98.8,
+                    prod_diaria: 655.0,
+                    prod_horaria: 81.88
+                },
+                {
+                    nome: 'JULIANE',
+                    grupo: 'JULIO',
+                    total: 679,
+                    aprovados: 31,
+                    pendentes: 592,
+                    eficiencia: 98.5,
+                    prod_diaria: 679.0,
+                    prod_horaria: 84.88
+                },
+                {
+                    nome: 'LUARA',
+                    grupo: 'JULIO',
+                    total: 686,
+                    aprovados: 58,
+                    pendentes: 578,
+                    eficiencia: 99.3,
+                    prod_diaria: 686.0,
+                    prod_horaria: 85.75
+                },
+                {
+                    nome: 'MATHEUS',
+                    grupo: 'JULIO',
+                    total: 652,
+                    aprovados: 99,
+                    pendentes: 460,
+                    eficiencia: 99.4,
+                    prod_diaria: 652.0,
+                    prod_horaria: 81.50
+                },
+                {
+                    nome: 'ELISANGELA',
+                    grupo: 'JULIO',
+                    total: 671,
+                    aprovados: 54,
+                    pendentes: 559,
+                    eficiencia: 99.9,
+                    prod_diaria: 671.0,
+                    prod_horaria: 83.88
+                },
+                {
+                    nome: 'THALISSON',
+                    grupo: 'JULIO',
+                    total: 670,
+                    aprovados: 65,
+                    pendentes: 538,
+                    eficiencia: 99.6,
+                    prod_diaria: 670.0,
+                    prod_horaria: 83.75
+                },
+                {
+                    nome: 'NUNO',
+                    grupo: 'JULIO',
+                    total: 663,
+                    aprovados: 89,
+                    pendentes: 503,
+                    eficiencia: 99.7,
+                    prod_diaria: 663.0,
+                    prod_horaria: 82.88
+                },
+                {
+                    nome: 'VICTOR ADRIANO',
+                    grupo: 'JULIO',
+                    total: 688,
+                    aprovados: 18,
+                    pendentes: 628,
+                    eficiencia: 99.3,
+                    prod_diaria: 688.0,
+                    prod_horaria: 86.00
+                },
+                {
+                    nome: 'POLIANA',
+                    grupo: 'JULIO',
+                    total: 651,
+                    aprovados: 141,
+                    pendentes: 418,
+                    eficiencia: 98.5,
+                    prod_diaria: 651.0,
+                    prod_horaria: 81.38
+                },
+                {
+                    nome: 'IGOR',
+                    grupo: 'JULIO',
+                    total: 689,
+                    aprovados: 17,
+                    pendentes: 618,
+                    eficiencia: 99.9,
+                    prod_diaria: 689.0,
+                    prod_horaria: 86.12
+                },
+                // Grupo LEANDRO
+                {
+                    nome: 'AMANDA SANTANA',
+                    grupo: 'LEANDRO',
+                    total: 939,
+                    aprovados: 115,
+                    pendentes: 738,
+                    eficiencia: 99.3,
+                    prod_diaria: 939.0,
+                    prod_horaria: 117.38
+                },
+                {
+                    nome: 'ALINE SALVADOR',
+                    grupo: 'LEANDRO',
+                    total: 970,
+                    aprovados: 66,
+                    pendentes: 845,
+                    eficiencia: 100.0,
+                    prod_diaria: 970.0,
+                    prod_horaria: 121.25
+                },
+                {
+                    nome: 'BRUNO',
+                    grupo: 'LEANDRO',
+                    total: 617,
+                    aprovados: 78,
+                    pendentes: 462,
+                    eficiencia: 98.9,
+                    prod_diaria: 617.0,
+                    prod_horaria: 77.12
+                },
+                {
+                    nome: 'EDIANE',
+                    grupo: 'LEANDRO',
+                    total: 699,
+                    aprovados: 34,
+                    pendentes: 592,
+                    eficiencia: 100.0,
+                    prod_diaria: 699.0,
+                    prod_horaria: 87.38
+                },
+                {
+                    nome: 'FABIANA',
+                    grupo: 'LEANDRO',
+                    total: 636,
+                    aprovados: 74,
+                    pendentes: 485,
+                    eficiencia: 99.5,
+                    prod_diaria: 636.0,
+                    prod_horaria: 79.50
+                },
+                {
+                    nome: 'GREICY',
+                    grupo: 'LEANDRO',
+                    total: 973,
+                    aprovados: 24,
+                    pendentes: 906,
+                    eficiencia: 99.7,
+                    prod_diaria: 973.0,
+                    prod_horaria: 121.62
+                },
+                {
+                    nome: 'JULIANA',
+                    grupo: 'LEANDRO',
+                    total: 934,
+                    aprovados: 44,
+                    pendentes: 836,
+                    eficiencia: 99.4,
+                    prod_diaria: 934.0,
+                    prod_horaria: 116.75
+                },
+                {
+                    nome: 'ITAYNNARA',
+                    grupo: 'LEANDRO',
+                    total: 939,
+                    aprovados: 130,
+                    pendentes: 735,
+                    eficiencia: 100.0,
+                    prod_diaria: 939.0,
+                    prod_horaria: 117.38
+                },
+                {
+                    nome: 'JULIA',
+                    grupo: 'LEANDRO',
+                    total: 960,
+                    aprovados: 77,
+                    pendentes: 818,
+                    eficiencia: 99.9,
+                    prod_diaria: 960.0,
+                    prod_horaria: 120.00
+                },
+                {
+                    nome: 'KATIA',
+                    grupo: 'LEANDRO',
+                    total: 957,
+                    aprovados: 72,
+                    pendentes: 828,
+                    eficiencia: 100.0,
+                    prod_diaria: 957.0,
+                    prod_horaria: 119.62
+                },
+                {
+                    nome: 'IZABEL',
+                    grupo: 'LEANDRO',
+                    total: 640,
+                    aprovados: 26,
+                    pendentes: 586,
+                    eficiencia: 98.8,
+                    prod_diaria: 640.0,
+                    prod_horaria: 80.00
+                },
+                {
+                    nome: 'MARIA BRUNA',
+                    grupo: 'LEANDRO',
+                    total: 961,
+                    aprovados: 100,
+                    pendentes: 792,
+                    eficiencia: 99.7,
+                    prod_diaria: 961.0,
+                    prod_horaria: 120.12
+                }
+            ],
+            relatorio_diario: {
+                // Grupo JULIO
+                'ANA GESSICA': {
+                    'VERIFICADO': 28,
+                    'ANÁLISE': 11,
+                    'PENDENTE': 532,
+                    'PRIORIDADE': 13,
+                    'PRIORIDADE TOTAL': 2,
+                    'APROVADO': 68,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 4,
+                    'TOTAL': 658
+                },
+                'ANA LIDIA': {
+                    'VERIFICADO': 39,
+                    'ANÁLISE': 4,
+                    'PENDENTE': 493,
+                    'PRIORIDADE': 13,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 93,
+                    'APREENDIDO': 1,
+                    'CANCELADO': 5,
+                    'TOTAL': 650
+                },
+                'FELIPE': {
+                    'VERIFICADO': 70,
+                    'ANÁLISE': 2,
+                    'PENDENTE': 423,
+                    'PRIORIDADE': 5,
+                    'PRIORIDADE TOTAL': 1,
+                    'APROVADO': 143,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 3,
+                    'TOTAL': 655
+                },
+                'JULIANE': {
+                    'VERIFICADO': 16,
+                    'ANÁLISE': 5,
+                    'PENDENTE': 592,
+                    'PRIORIDADE': 16,
+                    'PRIORIDADE TOTAL': 2,
+                    'APROVADO': 31,
+                    'APREENDIDO': 2,
+                    'CANCELADO': 5,
+                    'TOTAL': 679
+                },
+                'LUARA': {
+                    'VERIFICADO': 35,
+                    'ANÁLISE': 2,
+                    'PENDENTE': 578,
+                    'PRIORIDADE': 2,
+                    'PRIORIDADE TOTAL': 1,
+                    'APROVADO': 58,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 5,
+                    'TOTAL': 686
+                },
+                'MATHEUS': {
+                    'VERIFICADO': 75,
+                    'ANÁLISE': 4,
+                    'PENDENTE': 460,
+                    'PRIORIDADE': 6,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 99,
+                    'APREENDIDO': 1,
+                    'CANCELADO': 3,
+                    'TOTAL': 652
+                },
+                'ELISANGELA': {
+                    'VERIFICADO': 44,
+                    'ANÁLISE': 8,
+                    'PENDENTE': 559,
+                    'PRIORIDADE': 0,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 54,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 5,
+                    'TOTAL': 671
+                },
+                'THALISSON': {
+                    'VERIFICADO': 44,
+                    'ANÁLISE': 2,
+                    'PENDENTE': 538,
+                    'PRIORIDADE': 2,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 65,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 16,
+                    'TOTAL': 670
+                },
+                'NUNO': {
+                    'VERIFICADO': 49,
+                    'ANÁLISE': 4,
+                    'PENDENTE': 503,
+                    'PRIORIDADE': 9,
+                    'PRIORIDADE TOTAL': 1,
+                    'APROVADO': 89,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 6,
+                    'TOTAL': 663
+                },
+                'VICTOR ADRIANO': {
+                    'VERIFICADO': 22,
+                    'ANÁLISE': 9,
+                    'PENDENTE': 628,
+                    'PRIORIDADE': 2,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 18,
+                    'APREENDIDO': 2,
+                    'CANCELADO': 2,
+                    'TOTAL': 688
+                },
+                'POLIANA': {
+                    'VERIFICADO': 66,
+                    'ANÁLISE': 11,
+                    'PENDENTE': 418,
+                    'PRIORIDADE': 3,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 141,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 2,
+                    'TOTAL': 651
+                },
+                'IGOR': {
+                    'VERIFICADO': 11,
+                    'ANÁLISE': 16,
+                    'PENDENTE': 618,
+                    'PRIORIDADE': 23,
+                    'PRIORIDADE TOTAL': 3,
+                    'APROVADO': 17,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 0,
+                    'TOTAL': 689
+                },
+                // Grupo LEANDRO
+                'AMANDA SANTANA': {
+                    'VERIFICADO': 51,
+                    'ANÁLISE': 7,
+                    'PENDENTE': 738,
+                    'PRIORIDADE': 8,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 115,
+                    'APREENDIDO': 3,
+                    'CANCELADO': 10,
+                    'TOTAL': 939
+                },
+                'ALINE SALVADOR': {
+                    'VERIFICADO': 30,
+                    'ANÁLISE': 4,
+                    'PENDENTE': 845,
+                    'PRIORIDADE': 15,
+                    'PRIORIDADE TOTAL': 4,
+                    'APROVADO': 66,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 6,
+                    'TOTAL': 970
+                },
+                'BRUNO': {
+                    'VERIFICADO': 43,
+                    'ANÁLISE': 4,
+                    'PENDENTE': 462,
+                    'PRIORIDADE': 15,
+                    'PRIORIDADE TOTAL': 4,
+                    'APROVADO': 78,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 4,
+                    'TOTAL': 617
+                },
+                'EDIANE': {
+                    'VERIFICADO': 61,
+                    'ANÁLISE': 1,
+                    'PENDENTE': 592,
+                    'PRIORIDADE': 11,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 34,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 0,
+                    'TOTAL': 699
+                },
+                'FABIANA': {
+                    'VERIFICADO': 64,
+                    'ANÁLISE': 1,
+                    'PENDENTE': 485,
+                    'PRIORIDADE': 5,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 74,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 4,
+                    'TOTAL': 636
+                },
+                'GREICY': {
+                    'VERIFICADO': 32,
+                    'ANÁLISE': 0,
+                    'PENDENTE': 906,
+                    'PRIORIDADE': 7,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 24,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 1,
+                    'TOTAL': 973
+                },
+                'JULIANA': {
+                    'VERIFICADO': 38,
+                    'ANÁLISE': 0,
+                    'PENDENTE': 836,
+                    'PRIORIDADE': 5,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 44,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 5,
+                    'TOTAL': 934
+                },
+                'ITAYNNARA': {
+                    'VERIFICADO': 60,
+                    'ANÁLISE': 2,
+                    'PENDENTE': 735,
+                    'PRIORIDADE': 3,
+                    'PRIORIDADE TOTAL': 1,
+                    'APROVADO': 130,
+                    'APREENDIDO': 2,
+                    'CANCELADO': 6,
+                    'TOTAL': 939
+                },
+                'JULIA': {
+                    'VERIFICADO': 37,
+                    'ANÁLISE': 1,
+                    'PENDENTE': 818,
+                    'PRIORIDADE': 16,
+                    'PRIORIDADE TOTAL': 0,
+                    'APROVADO': 77,
+                    'APREENDIDO': 1,
+                    'CANCELADO': 9,
+                    'TOTAL': 960
+                },
+                'KATIA': {
+                    'VERIFICADO': 31,
+                    'ANÁLISE': 6,
+                    'PENDENTE': 828,
+                    'PRIORIDADE': 12,
+                    'PRIORIDADE TOTAL': 7,
+                    'APROVADO': 72,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 1,
+                    'TOTAL': 957
+                },
+                'IZABEL': {
+                    'VERIFICADO': 17,
+                    'ANÁLISE': 0,
+                    'PENDENTE': 586,
+                    'PRIORIDADE': 1,
+                    'PRIORIDADE TOTAL': 2,
+                    'APROVADO': 26,
+                    'APREENDIDO': 0,
+                    'CANCELADO': 0,
+                    'TOTAL': 640
+                },
+                'MARIA BRUNA': {
+                    'VERIFICADO': 55,
+                    'ANÁLISE': 2,
+                    'PENDENTE': 792,
+                    'PRIORIDADE': 1,
+                    'PRIORIDADE TOTAL': 1,
+                    'APROVADO': 100,
+                    'APREENDIDO': 2,
+                    'CANCELADO': 5,
+                    'TOTAL': 961
+                }
+            },
+            status: [
+                { nome: 'VERIFICADO', valor: 1018 },
+                { nome: 'ANÁLISE', valor: 106 },
+                { nome: 'PENDENTE', valor: 14965 },
+                { nome: 'PRIORIDADE', valor: 193 },
+                { nome: 'PRIORIDADE TOTAL', valor: 29 },
+                { nome: 'APROVADO', valor: 1716 },
+                { nome: 'APREENDIDO', valor: 14 },
+                { nome: 'CANCELADO', valor: 107 }
+            ],
+            total_geral: 18237,
+            evolucao: [
+                { data: '04/03/2024', total: 3647, aprovados: 343 },
+                { data: '05/03/2024', total: 3647, aprovados: 343 },
+                { data: '06/03/2024', total: 3647, aprovados: 343 },
+                { data: '07/03/2024', total: 3647, aprovados: 343 },
+                { data: '08/03/2024', total: 3649, aprovados: 344 }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Atualizar cards de resumo
+            function atualizarCardResumo() {
+                document.getElementById('totalContratos').textContent = dadosExemplo.total_geral;
+                
+                const totalAprovados = dadosExemplo.status.find(s => s.nome === 'APROVADO')?.valor || 0;
+                document.getElementById('totalAprovados').textContent = totalAprovados;
+                
+                const totalPendentes = dadosExemplo.status.find(s => s.nome === 'PENDENTE')?.valor || 0;
+                document.getElementById('totalPendentes').textContent = totalPendentes;
+                
+                const eficienciaMedia = Math.round(
+                    dadosExemplo.colaboradores.reduce((acc, curr) => acc + curr.eficiencia, 0) / 
+                    dadosExemplo.colaboradores.length
+                );
+                document.getElementById('eficienciaTotal').textContent = `${eficienciaMedia}%`;
+                document.getElementById('eficienciaBar').style.width = `${eficienciaMedia}%`;
+            }
+
+            // Gráfico de Evolução
+            const evolucaoOptions = {
+                series: [{
+                    name: 'Total',
+                    data: dadosExemplo.evolucao.map(d => d.total)
+                }, {
+                    name: 'Aprovados',
+                    data: dadosExemplo.evolucao.map(d => d.aprovados)
+                }],
+                chart: {
+                    type: 'area',
+                    height: 350,
+                    toolbar: {
+                        show: false
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                xaxis: {
+                    categories: dadosExemplo.evolucao.map(d => d.data)
+                },
+                tooltip: {
+                    x: {
+                        format: 'dd/MM/yyyy'
+                    }
+                }
+            };
+
+            const evolucaoChart = new ApexCharts(document.querySelector("#evolucaoChart"), evolucaoOptions);
+            evolucaoChart.render();
+
+            // Gráfico de Status
+            const statusOptions = {
+                series: dadosExemplo.status.map(s => s.valor),
+                chart: {
+                    type: 'donut',
+                    height: 350
+                },
+                labels: dadosExemplo.status.map(s => s.nome),
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }]
+            };
+
+            const statusChart = new ApexCharts(document.querySelector("#statusChart"), statusOptions);
+            statusChart.render();
+
+            // Preencher filtros
+            function preencherFiltros() {
+                const grupoFilter = document.getElementById('grupoFilter');
+                const grupoRelatorio = document.getElementById('grupoRelatorio');
+                const statusFilter = document.getElementById('statusFilter');
+                
+                // Limpar filtros
+                [grupoFilter, grupoRelatorio].forEach(select => select.innerHTML = '<option value="">Todos</option>');
+                statusFilter.innerHTML = '<option value="">Todos</option>';
+                
+                // Preencher grupos
+                dadosExemplo.grupos.forEach(grupo => {
+                    [grupoFilter, grupoRelatorio].forEach(select => {
+                        const option = document.createElement('option');
+                        option.value = grupo;
+                        option.textContent = grupo;
+                        select.appendChild(option);
+                    });
+                });
+                
+                // Preencher status
+                dadosExemplo.status.forEach(status => {
+                    const option = document.createElement('option');
+                    option.value = status.nome;
+                    option.textContent = status.nome;
+                    statusFilter.appendChild(option);
+                });
+            }
+
+            // Preencher tabela de colaboradores
+            function atualizarTabelaColaboradores(filtroGrupo = '') {
+                const tbody = document.querySelector('#colaboradoresTable tbody');
+                tbody.innerHTML = '';
+                
+                dadosExemplo.colaboradores
+                    .filter(colab => !filtroGrupo || colab.grupo === filtroGrupo)
+                    .forEach(colab => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${colab.nome}</td>
+                            <td>${colab.grupo}</td>
+                            <td>${colab.total}</td>
+                            <td>${colab.aprovados}</td>
+                            <td>${colab.pendentes}</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: ${colab.eficiencia}%"
+                                        aria-valuenow="${colab.eficiencia}" aria-valuemin="0" aria-valuemax="100">
+                                        ${colab.eficiencia}%
+                                    </div>
+                                </div>
+                            </td>
+                            <td>${colab.prod_diaria}</td>
+                            <td>${colab.prod_horaria}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="atualizarRelatorioDiario('${colab.nome}')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+            }
+
+            // Função para atualizar o relatório diário
+            function atualizarRelatorioDiario(colaborador) {
+                const tbody = document.querySelector('#relatorioDiarioTable tbody');
+                tbody.innerHTML = '';
+                
+                if (colaborador && dadosExemplo.relatorio_diario[colaborador]) {
+                    const relatorio = dadosExemplo.relatorio_diario[colaborador];
+                    const total = relatorio['TOTAL'];
+                    const statusOrdem = [
+                        'VERIFICADO', 'ANÁLISE', 'PENDENTE', 'PRIORIDADE', 
+                        'PRIORIDADE TOTAL', 'APROVADO', 'APREENDIDO', 'CANCELADO'
+                    ];
+                    
+                    statusOrdem.forEach(status => {
+                        const valor = relatorio[status] || 0;
+                        const percentual = total > 0 ? ((valor / total) * 100).toFixed(1) : '0.0';
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${status}</td>
+                            <td>${valor}</td>
+                            <td>${percentual}%</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                    
+                    document.getElementById('totalRelatorio').textContent = total;
+                    
+                    // Atualizar seletores
+                    const colab = dadosExemplo.colaboradores.find(c => c.nome === colaborador);
+                    if (colab) {
+                        document.getElementById('grupoRelatorio').value = colab.grupo;
+                        document.getElementById('colaboradorRelatorio').value = colaborador;
+                    }
+                }
+            }
+
+            // Eventos de filtro
+            document.getElementById('grupoFilter').addEventListener('change', (e) => {
+                atualizarTabelaColaboradores(e.target.value);
+            });
+
+            document.getElementById('grupoRelatorio').addEventListener('change', (e) => {
+                const grupo = e.target.value;
+                const colaboradorSelect = document.getElementById('colaboradorRelatorio');
+                colaboradorSelect.innerHTML = '<option value="">Selecione um colaborador</option>';
+                
+                dadosExemplo.colaboradores
+                    .filter(c => !grupo || c.grupo === grupo)
+                    .forEach(colab => {
+                        const option = document.createElement('option');
+                        option.value = colab.nome;
+                        option.textContent = colab.nome;
+                        colaboradorSelect.appendChild(option);
+                    });
+            });
+
+            document.getElementById('colaboradorRelatorio').addEventListener('change', (e) => {
+                atualizarRelatorioDiario(e.target.value);
+            });
+
+            // Inicialização
+            preencherFiltros();
+            atualizarCardResumo();
+            atualizarTabelaColaboradores();
+            if (dadosExemplo.colaboradores.length > 0) {
+                atualizarRelatorioDiario(dadosExemplo.colaboradores[0].nome);
+            }
+        });
+    </script>
+</body>
+</html>
