@@ -1,159 +1,159 @@
-# Sistema de Análise de Colaboradores
+# Dashboard de Análise de Contratos
 
-<p align="center">
-  <img src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/python-3.8+-blue.svg" />
-  <img src="https://img.shields.io/badge/machine%20learning-enabled-green.svg" />
-  <a href="https://github.com/Manfullwell/data-analytics-saas/blob/main/LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-</p>
+Sistema de análise e visualização de dados de contratos com dashboard interativo.
 
-> Sistema avançado de análise de desempenho e geração de relatórios para colaboradores usando Machine Learning e Analytics.
+## Requisitos
 
-## 👨‍💻 Autor
+- Python 3.8 ou superior
+- pip (gerenciador de pacotes Python)
+- Navegador web moderno
 
-**Igor J. Soares (@Manfullwell)**
+## Instalação Local
 
-* GitHub: [@Manfullwell](https://github.com/Manfullwell)
-
-## 🚀 Funcionalidades
-
-### Analytics Avançado
-- Análise detalhada de performance individual
-- Processamento paralelo de múltiplos colaboradores
-- Métricas personalizadas de qualidade
-- Dashboard interativo em tempo real
-
-### Machine Learning
-- Previsão de performance usando RandomForest
-- Detecção de padrões de eficiência
-- Análise preditiva de resultados
-- Clustering de perfis similares
-
-### Visualização de Dados
-- Dashboard responsivo com Bootstrap 5
-- Gráficos interativos com Chart.js
-- Relatórios HTML customizados
-- Exportação de dados em múltiplos formatos
-
-## 📊 Pipeline de Dados
-
-1. **Coleta e Validação**
-   - Leitura automática de planilhas Excel
-   - Validação de estrutura de dados
-   - Normalização de campos
-
-2. **Processamento**
-   - Análise paralela de colaboradores
-   - Cálculo de métricas de eficiência
-   - Tratamento de datas e status
-
-3. **Machine Learning**
-   - Treinamento de modelos preditivos
-   - Análise de clusters
-   - Previsão de performance
-
-4. **Visualização**
-   - Dashboard interativo
-   - Gráficos de performance
-   - Relatórios automatizados
-
-## 🛠️ Tecnologias
-
-- Backend: Python/Flask
-- Frontend: HTML5, CSS3, JavaScript
-- Visualização: Chart.js, Plotly
-- Analytics: Pandas, NumPy
-- ML: Scikit-learn
-- UI: Bootstrap 5
-- Excel: OpenPyXL
-
-## 📦 Instalação
-
+1. Clone o repositório ou baixe os arquivos
+2. Crie um ambiente virtual Python:
 ```bash
-# Clonar repositório
-git clone https://github.com/Manfullwell/data-analytics-saas.git
-cd data-analytics-saas
+python -m venv venv
+```
 
-# Criar ambiente virtual
-python -m venv oknew
+3. Ative o ambiente virtual:
+- Windows:
+```bash
+venv\Scripts\activate
+```
+- Linux/Mac:
+```bash
+source venv/bin/activate
+```
 
-# Ativar ambiente
-source oknew/bin/activate  # Linux/Mac
-oknew\Scripts\activate     # Windows
-
-# Instalar dependências
+4. Instale as dependências:
+```bash
 pip install -r requirements.txt
 ```
 
-## 🚀 Uso
+5. Configure as variáveis de ambiente:
+- Copie o arquivo `.env.example` para `.env`
+- Ajuste as variáveis conforme necessário
 
+6. Execute o servidor:
 ```bash
-# Executar análise de resultados
-python app/analise_resultados.py
-
-# Iniciar dashboard
-python app/dashboard.py
+python app.py
 ```
 
-## 📁 Estrutura do Projeto
+7. Acesse o dashboard em `http://localhost:8000`
 
-```
-data-analytics-saas/
-├── app/
-│   ├── templates/
-│   │   └── dashboard.html
-│   ├── analise_resultados.py
-│   ├── analise_eficiencia.py
-│   └── dashboard.py
-├── data/
-│   └── planilhas/
-├── logs/
-├── models/
-├── reports/
-└── requirements.txt
+## Deploy no Google Cloud Platform (Gratuito)
+
+1. Crie uma conta no Google Cloud Platform (GCP)
+2. Instale o Google Cloud SDK
+3. Configure o projeto:
+```bash
+gcloud init
 ```
 
-## 🔄 Updates Recentes
+4. Deploy no Cloud Run:
+```bash
+gcloud run deploy dashboard-contratos \
+  --source . \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated
+```
 
-### v2.0.0
-- Implementação de machine learning para previsão
-- Dashboard interativo com Bootstrap 5
-- Análise avançada de eficiência
-- Sistema de ranking automático
-- Tratamento robusto de datas
-- Detecção de padrões de performance
+## Deploy no Heroku (Gratuito)
 
-### v1.5.0
-- Análise paralela de colaboradores
-- Métricas personalizadas
-- Exportação de relatórios
-- Interface responsiva
+1. Crie uma conta no Heroku
+2. Instale o Heroku CLI
+3. Faça login:
+```bash
+heroku login
+```
 
-### v1.0.0
-- Análise básica de performance
-- Geração de relatórios
-- Dashboard simples
+4. Crie um novo app:
+```bash
+heroku create dashboard-contratos
+```
 
-## 📈 Roadmap
+5. Configure as variáveis de ambiente:
+```bash
+heroku config:set DB_PATH=relatorio_dashboard.db
+```
 
-- [ ] API REST para integração
-- [ ] Sistema de autenticação
-- [ ] Exportação para múltiplos formatos
-- [ ] Análise preditiva avançada
-- [ ] Integração com BI
-- [ ] Mobile app
+6. Deploy:
+```bash
+git push heroku main
+```
 
-## 🤝 Contribuindo
+## Deploy no Railway (Gratuito)
 
-Contribuições, issues e feature requests são bem-vindos!
-Sinta-se à vontade para verificar a [página de issues](https://github.com/Manfullwell/data-analytics-saas/issues).
+1. Crie uma conta no Railway (railway.app)
+2. Conecte seu repositório GitHub
+3. Configure as variáveis de ambiente no dashboard do Railway
+4. O deploy será automático a cada push
 
-## 📝 Licença
+## Estrutura do Projeto
 
-Copyright © 2024 [Igor J. Soares (@Manfullwell)](https://github.com/Manfullwell).
-Este projeto está sob licença [MIT](https://github.com/Manfullwell/data-analytics-saas/blob/main/LICENSE).
+```
+.
+├── app.py                 # Aplicação FastAPI
+├── analisar_dados_v5.py   # Lógica de análise de dados
+├── requirements.txt       # Dependências Python
+├── .env                  # Variáveis de ambiente
+├── templates/            # Templates HTML
+│   └── dashboard.html    # Template do dashboard
+└── static/              # Arquivos estáticos
+```
 
----
-_Desenvolvido com ❤️ por Igor J. Soares (@Manfullwell)_
+## Manutenção
+
+### Backup do Banco de Dados
+
+O banco SQLite é salvo localmente. Para backup:
+1. Copie o arquivo `relatorio_dashboard.db`
+2. Armazene em local seguro
+
+### Atualização de Dados
+
+Os dados são atualizados:
+- Automaticamente a cada 30 segundos (status)
+- Manualmente pelo botão "Atualizar Dados"
+- Via API endpoint POST `/atualizar`
+
+## Solução de Problemas
+
+### Erro de Conexão com Banco de Dados
+1. Verifique se o arquivo do banco existe
+2. Confirme as permissões de escrita
+3. Teste a conexão manualmente:
+```python
+import sqlite3
+conn = sqlite3.connect('relatorio_dashboard.db')
+```
+
+### Erro no Carregamento de Dados
+1. Verifique o formato dos arquivos Excel
+2. Confirme se as colunas necessárias existem
+3. Verifique os logs do servidor
+
+### Problemas de Performance
+1. Otimize as consultas SQL
+2. Implemente cache quando necessário
+3. Monitore o uso de memória
+
+## API Endpoints
+
+- `GET /`: Dashboard principal
+- `GET /status`: Status do servidor e dados
+- `POST /atualizar`: Atualiza os dados
+
+## Contribuindo
+
+1. Fork o repositório
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
+
+## Suporte
+
+Para suporte, abra uma issue no repositório ou contate o mantenedor. 
